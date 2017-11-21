@@ -7,8 +7,8 @@
 </head>
 <body>
 	<p>
-		Vous n'avez pas accès à l'espace restreint : vous devez vous <a
-			href="connexion">connecter</a> d'abord.
+		Vous n'avez pas accès à l'espace admin : vous devez vous <a
+			href="home">connecter</a> d'abord.
 	</p>
 </body>
 </html>
