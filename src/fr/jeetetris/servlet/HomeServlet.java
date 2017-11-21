@@ -15,7 +15,7 @@ import javax.servlet.http.HttpSession;
 public class HomeServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     public static final String HOME     = "/WEB-INF/home.jsp";
-    public static final String ADMIN_HOME  = "/WEB-INF/admin_home.jsp";
+    public static final String HOME_ADMIN  = "/WEB-INF/home_admin.jsp";
     public static final String USER = "user";
        
     /**
@@ -34,10 +34,10 @@ public class HomeServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 //		Si l'utilisateur n'est pas connecté alors on le redirige vers la page d'accueil : HOME
         if ( session.getAttribute( USER ) == null ) {
-            response.sendRedirect( request.getContextPath() + HOME );
+        	this.getServletContext().getRequestDispatcher( HOME ).forward( request, response );
         } else {
 //        	Sinon, on le redirige vers la destination
-            this.getServletContext().getRequestDispatcher( ADMIN_HOME ).forward( request, response );
+            this.getServletContext().getRequestDispatcher( HOME_ADMIN ).forward( request, response );
         }
         
 	}
