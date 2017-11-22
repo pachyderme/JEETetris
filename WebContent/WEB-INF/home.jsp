@@ -14,7 +14,11 @@
 				data-activates="mobile-demo" class="button-collapse"><i
 				class="material-icons">menu</i></a>
 			<ul id="nav-mobile" class="right hide-on-med-and-down">
-				<li><a href="collapsible.html">Deconnexion</a></li>
+				<li>
+					<form method="POST" action="">
+						<input class="btn waves-effect waves-light" type="submit" name="deconnexion" value="Deconnexion" />
+					</form>
+				</li>
 			</ul>
 			<ul class="side-nav" id="mobile-demo">
 				<li>
