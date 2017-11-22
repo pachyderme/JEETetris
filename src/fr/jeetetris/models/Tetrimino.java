@@ -1,4 +1,4 @@
-package fr.jeetetris.model;
+package fr.jeetetris.models;
 
 public class Tetrimino {
 	public enum TetriminoForm {

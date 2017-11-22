@@ -1,4 +1,4 @@
-package fr.jeetetris.model;
+package fr.jeetetris.models;
 
 import java.util.List;
 
