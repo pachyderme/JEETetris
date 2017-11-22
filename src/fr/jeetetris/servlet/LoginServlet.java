@@ -6,22 +6,18 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 /**
- * Servlet implementation class HomeServlet
+ * Servlet implementation class LoginServlet
  */
-@WebServlet("/home")
-public class HomeServlet extends HttpServlet {
+@WebServlet("/login")
+public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-    public static final String LOGIN     = "login";
-    public static final String HOME  = "/home";
-    public static final String USER = "user";
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public HomeServlet() {
+    public LoginServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -30,16 +26,7 @@ public class HomeServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//      On récupère la session dans la requète
-		HttpSession session = request.getSession();
-//		Si l'utilisateur n'est pas connecté alors on le redirige vers la page d'accueil : HOME
-        if ( session.getAttribute( USER ) == null ) {
-        	response.sendRedirect(LOGIN);
-        } else {
-//        	Sinon, on le redirige vers la destination
-            this.getServletContext().getRequestDispatcher( "/WEB-INF/"+HOME+".jsp" ).forward( request, response );
-        }
-        
+		this.getServletContext().getRequestDispatcher( "/WEB-INF/login.jsp" ).forward( request, response );
 	}
 
 	/**

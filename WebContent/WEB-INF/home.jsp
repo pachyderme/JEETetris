@@ -1,14 +1,11 @@
-<%@ page pageEncoding="UTF-8"%>
+<%@ page pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="utf-8" />
-<title>Accès public</title>
-</head>
-<body>
-	<p>
-		Vous n'avez pas accès à l'espace admin : vous devez vous <a
-			href="home">connecter</a> d'abord.
-	</p>
-</body>
+    <head>
+        <meta charset="utf-8" />
+        <title>Accueil</title>
+    </head>
+    <body>
+        <p>Connecté.</p>
+    </body>
 </html>
