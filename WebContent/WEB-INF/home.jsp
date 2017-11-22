@@ -20,9 +20,9 @@
 			<ul id="nav-mobile" class="right hide-on-med-and-down">
 				<li>
 					<form method="POST" action="">
-						<input class="btn waves-effect waves-light pink" type="submit"
-							name="deconnexion" value="Deconnexion" />
-
+						<button class="btn waves-effect waves-light pink" style="height: 60px;" type="submit" name="deconnexion">
+						    <i class="material-icons">power_settings_new</i>
+						</button>
 					</form>
 				</li>
 			</ul>
@@ -76,7 +76,8 @@
 							<option value="orange">Orange</option>
 							<option value="purple">Violet</option>
 							<option value="pink">Rose</option>
-						</select> <label>Couleur</label>
+						</select>
+						<label>Couleur</label>
 					</div>
 				</div>
 				<div class="input-field center">
