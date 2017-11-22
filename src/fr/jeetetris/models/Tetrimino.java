@@ -9,7 +9,14 @@ public class Tetrimino {
 	
 	private TetriminoForm form;
 	private String color ;
+	private String name;
 	
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
 	public TetriminoForm getForm() {
 		return form;
 	}
@@ -23,9 +30,10 @@ public class Tetrimino {
 		this.color = color;
 	}
 	
-	public Tetrimino(TetriminoForm form, String color) {
+	public Tetrimino(TetriminoForm form, String color, String name) {
 		super();
 		this.form = form;
 		this.color = color;
+		this.name = name;
 	}
 }
