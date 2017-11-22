@@ -43,10 +43,10 @@ public class LoginServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		// doGet(request, response);
-		if(request.getAttribute("users") != null) {
-			List<User> users = (List<User>) request.getAttribute("users");
+		if(request.getServletContext().getAttribute("users") != null) {
+			List<User> users = (List<User>) request.getServletContext().getAttribute("users");
 			for(User u : users) {
-				if(u.getIdentifier() == request.getParameter("identifier")) {
+				if(u.getIdentifier().equals(request.getParameter("identifier"))) {
 					request.getSession().setAttribute("user", u);
 				}
 			}
