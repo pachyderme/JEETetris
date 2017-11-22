@@ -8,14 +8,26 @@
 	href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
 </head>
 <body>
-	<form method="POST" action="">
-		<p>Login</p>
-		<input type="text" name="identifier" id="identifier" />
-		<p>Mot de passe</p>
-		<input type="password" name="password" id="password" /> <br />
-		<br /> <input type="submit" value="Connexion" />
+	<div class="container">
+		<div class="row"></div>		<div class="row"></div>
+		<h5>Gestion du jeu Tétris</h5>
+		<form method="POST" action="" class="row">
+		<div class="input-field">
+			<input type="text" name="identifier" id="identifier" />
+			<label for="identifier">Identifiant</label>
+		</div>
+		<div class="input-field">
+			<input type="text" name="password" id="password" />
+			<label for="password">Password</label>
+		</div>
+		<div class="input-field">
+			<input type="submit" class="btn red lighten-2 white-text" value="Connexion" />
+		</div>
+
 	</form>
-	<script
-		src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+	</div>
+		<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
 </body>
 </html>

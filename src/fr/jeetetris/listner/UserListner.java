@@ -7,6 +7,7 @@ import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
 
+import fr.jeetetris.models.Tetris;
 import fr.jeetetris.models.User;
 
 /**
@@ -16,6 +17,7 @@ import fr.jeetetris.models.User;
 @WebListener
 public class UserListner implements ServletContextListener {
 	public List<User> users;
+	public Tetris tetris;
     /**
      * Default constructor. 
      */
@@ -39,6 +41,10 @@ public class UserListner implements ServletContextListener {
          users.add(new User("pbouv", "mdp", "Pierre", "Pierre"));
          
          sce.getServletContext().setAttribute("users", users);
+         
+         tetris = new Tetris();
+         
+         sce.getServletContext().setAttribute("tetris", tetris);
     }
 	
 }

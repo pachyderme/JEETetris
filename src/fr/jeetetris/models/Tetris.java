@@ -1,5 +1,6 @@
 package fr.jeetetris.models;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Tetris {
@@ -13,6 +14,10 @@ public class Tetris {
 		super();
 		this.tetriminos = tetriminos;
 		this.score = score;
+	}
+	public Tetris() {
+		tetriminos = new ArrayList<Tetrimino>();
+		this.score = 0;
 	}
 	public void setTetriminos(List<Tetrimino> tetriminos) {
 		this.tetriminos = tetriminos;

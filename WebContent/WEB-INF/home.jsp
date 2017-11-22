@@ -16,7 +16,7 @@
 			<ul id="nav-mobile" class="right hide-on-med-and-down">
 				<li>
 					<form method="POST" action="">
-						<input class="btn waves-effect waves-light" type="submit" name="deconnexion" value="Deconnexion" />
+						<input class="btn waves-effect waves-light red" type="submit" name="deconnexion" value="Deconnexion" />
 					</form>
 				</li>
 			</ul>
