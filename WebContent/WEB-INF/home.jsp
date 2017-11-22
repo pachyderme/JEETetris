@@ -17,6 +17,7 @@
 				<li>
 					<form method="POST" action="">
 						<input class="btn waves-effect waves-light red" type="submit" name="deconnexion" value="Deconnexion" />
+
 					</form>
 				</li>
 			</ul>
@@ -54,43 +55,20 @@
 	</div>
 	<div id="test2" class="col s12">
 		<div class="row">
-			<form class="col s12">
+			<form method="POST" action="" class="col s12">
 				<div class="row">
 					<div class="input-field col s6">
-						<input placeholder="Placeholder" id="first_name" type="text"
-							class="validate"> <label for="first_name">First
-							Name</label>
+						<input id="name" type="text"
+							class="validate"> <label for="name">Nom</label>
 					</div>
 					<div class="input-field col s6">
-						<input id="last_name" type="text" class="validate"> <label
-							for="last_name">Last Name</label>
-					</div>
-				</div>
-				<div class="row">
-					<div class="input-field col s12">
-						<input disabled value="I am not editable" id="disabled"
-							type="text" class="validate"> <label for="disabled">Disabled</label>
-					</div>
-				</div>
-				<div class="row">
-					<div class="input-field col s12">
-						<input id="password" type="password" class="validate"> <label
-							for="password">Password</label>
-					</div>
-				</div>
-				<div class="row">
-					<div class="input-field col s12">
-						<input id="email" type="email" class="validate"> <label
-							for="email">Email</label>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col s12">
-						This is an inline input field:
-						<div class="input-field inline">
-							<input id="email" type="email" class="validate"> <label
-								for="email" data-error="wrong" data-success="right">Email</label>
-						</div>
+						<select>
+							<option value="" disabled selected>Selectionner une couleur</option>
+							<option value="1">Bleu</option>
+							<option value="2">Blanc</option>
+							<option value="3">Rouge</option>
+						</select> 
+						<label>Couleur</label>
 					</div>
 				</div>
 			</form>
@@ -104,6 +82,7 @@
 	<script>
 		$(document).ready(function() {
 			$('ul.tabs').tabs();
+			$('select').material_select();
 		});
 	</script>
 </body>
