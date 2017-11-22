@@ -1,5 +1,7 @@
-<%@ page pageEncoding="UTF-8" langage="java"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,7 +19,8 @@
 			<ul id="nav-mobile" class="right hide-on-med-and-down">
 				<li>
 					<form method="POST" action="">
-						<input class="btn waves-effect waves-light pink" type="submit" name="deconnexion" value="Deconnexion" />
+						<input class="btn waves-effect waves-light pink" type="submit"
+							name="deconnexion" value="Deconnexion" />
 
 					</form>
 				</li>
@@ -32,26 +35,27 @@
 		</div>
 		<div class="nav-content">
 			<ul class="tabs tabs-transparent">
-				<li class="tab"><a class="active" href="#test1">TÃ©triminos</a></li>
-				<li class="tab"><a href="#test2">Ajouter un tÃ©trimino</a></li>
+				<li class="tab"><a class="active" href="#test1">Tétriminos</a></li>
+				<li class="tab"><a href="#test2">Ajouter un tétrimino</a></li>
 			</ul>
 		</div>
 	</nav>
 	<div id="test1" class="col s12">
 		<div class="row">
-			<c:foreach items="${applicationScope['tetris'].Tetriminos }" var="tetrimino">
-						<div class="col s12 m6">
-				<div class="card ${tetrimino.Color }">
-					<div class="card-content white-text">
-						<span class="card-title">${tetrimino.Name }</span>
-						
-					</div>
-					<div class="card-action">
-						<a href="#">This is a link</a> <a href="#">This is a link</a>
+			<c:forEach items="${applicationScope['tetris'].tetriminos }"
+				var="tetrimino">
+				<div class="col s6 m4">
+					<div class="card ${tetrimino.color }">
+						<div class="card-content white-text">
+							<span class="card-title">${tetrimino.name }</span>
+
+						</div>
+						<div class="card-action">
+							<a href="#">This is a link</a> <a href="#">This is a link</a>
+						</div>
 					</div>
 				</div>
-			</div>
-			</c:foreach>
+			</c:forEach>
 		</div>
 	</div>
 	<div id="test2" class="col s12">
@@ -59,18 +63,24 @@
 			<form method="POST" action="" class="col s12">
 				<div class="row">
 					<div class="input-field col s6">
-						<input id="name" type="text"
-							class="validate" name="name"> <label for="name">Nom</label>
+						<input id="name" type="text" class="validate" name="name">
+						<label for="name">Nom</label>
 					</div>
 					<div class="input-field col s6">
 						<select id="color" name="color">
 							<option value="" disabled selected>Selectionner une couleur</option>
-							<option value="1">Bleu</option>
-							<option value="2">Blanc</option>
-							<option value="3">Rouge</option>
-						</select> 
-						<label>Couleur</label>
+							<option value="blue">Bleu</option>
+							<option value="green">Vert</option>
+							<option value="red">Rouge</option>
+							<option value="orange">Orange</option>
+							<option value="purple">Violet</option>
+							<option value="pink">Rose</option>
+						</select> <label>Couleur</label>
 					</div>
+				</div>
+				<div class="input-field">
+					<input type="submit" class="btn red lighten-2 white-text"
+						value="Ajouter" />
 				</div>
 			</form>
 		</div>

@@ -59,8 +59,8 @@ public class HomeServlet extends HttpServlet {
 		}
 		if(request.getServletContext().getAttribute("tetris") != null) {
 			Tetris tetris = (Tetris) request.getServletContext().getAttribute("tetris");
-			if(request.getAttribute("name") != null && request.getAttribute("color") != null) {
-				tetris.getTetriminos().add(new Tetrimino(TetriminoForm.SQUARE, request.getAttribute("color").toString(), request.getAttribute("name").toString()));
+			if(request.getParameter("name") != null && request.getParameter("color") != null) {
+				tetris.getTetriminos().add(new Tetrimino(TetriminoForm.SQUARE, request.getParameter("color").toString(), request.getParameter("name").toString()));
 			}
 		}
 		doGet(request, response);
