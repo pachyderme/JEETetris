@@ -1,11 +1,15 @@
 package fr.jeetetris.servlet;
 
 import java.io.IOException;
+import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import fr.jeetetris.models.User;
 
 /**
  * Servlet implementation class LoginServlet
@@ -26,7 +30,11 @@ public class LoginServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		this.getServletContext().getRequestDispatcher( "/WEB-INF/login.jsp" ).forward( request, response );
+		if(request.getSession().getAttribute("user") != null) {
+			response.sendRedirect("home");
+		}else {
+			this.getServletContext().getRequestDispatcher( "/WEB-INF/login.jsp" ).forward( request, response );
+		}
 	}
 
 	/**
@@ -34,7 +42,21 @@ public class LoginServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		// doGet(request, response);
+		if(request.getAttribute("users") != null) {
+			List<User> users = (List<User>) request.getAttribute("users");
+			for(User u : users) {
+				if(u.getIdentifier() == request.getParameter("identifier")) {
+					request.getSession().setAttribute("user", u);
+				}
+			}
+		}
 		doGet(request, response);
+		
+		
+
+		
+		
 	}
 
 }

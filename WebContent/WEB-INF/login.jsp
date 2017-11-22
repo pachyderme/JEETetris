@@ -8,7 +8,7 @@
 <body>
 	<form method="POST" action="">
 		<p>Login</p>
-		<input type="text" name="login" id="login"/>
+		<input type="text" name="identifier" id="identifier"/>
 		<p>Mot de passe</p>
 		<input type="password" name="password" id="password"/>
 		<br/><br/>
