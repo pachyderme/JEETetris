@@ -41,17 +41,21 @@
 		</div>
 	</nav>
 	<div id="test1" class="col s12">
-		<div class="row">
-			<c:forEach items="${applicationScope['tetris'].tetriminos }"
-				var="tetrimino">
+		<div class="container row">
+			<c:if test="${applicationScope['tetris'].tetriminos.size() == 0 }">
+			<p class="light">Aucune entrée</p>
+			</c:if>
+			<c:forEach items="${applicationScope['tetris'].tetriminos }" var="tetrimino">
 				<div class="col s6 m4">
-					<div class="card ${tetrimino.color }">
+					<div class="card ${tetrimino.color } lighten-1">
 						<div class="card-content white-text">
 							<span class="card-title">${tetrimino.name }</span>
 
 						</div>
 						<div class="card-action">
-							<a href="#">This is a link</a> <a href="#">This is a link</a>
+							<form method="post" action="">
+								<button type="submit" class="red white-text btn red darken-2" name="delete" value="${tetrimino.name }">Supprimer</button>
+							</form>
 						</div>
 					</div>
 				</div>

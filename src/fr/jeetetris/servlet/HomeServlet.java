@@ -63,6 +63,21 @@ public class HomeServlet extends HttpServlet {
 				tetris.getTetriminos().add(new Tetrimino(TetriminoForm.SQUARE, request.getParameter("color").toString(), request.getParameter("name").toString()));
 			}
 		}
+		if(request.getParameter("delete") != null) {
+			Tetris t = (Tetris) request.getServletContext().getAttribute("tetris");
+			List<Tetrimino> tetriminos = t.getTetriminos();
+			Tetrimino te2 = null;
+			if(tetriminos != null) {
+				for(Tetrimino te: tetriminos) {
+					if(request.getParameter("delete").equals(te.getName())) {
+						te2 = te;
+					}
+				}
+				if(!te2.equals(null)) {
+					tetriminos.remove(te2);
+				}
+			}
+		}
 		doGet(request, response);
 	}
 
