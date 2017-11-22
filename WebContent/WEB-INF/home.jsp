@@ -9,10 +9,11 @@
 <title>Accueil</title>
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
 	<nav class="nav-extended">
-		<div class="nav-wrapper">
+		<div class="nav-wrapper center">
 			<a href="#" class="brand-logo">Tetris</a> <a href="#"
 				data-activates="mobile-demo" class="button-collapse"><i
 				class="material-icons">menu</i></a>
@@ -78,13 +79,20 @@
 						</select> <label>Couleur</label>
 					</div>
 				</div>
-				<div class="input-field">
+				<div class="input-field center">
 					<input type="submit" class="btn red lighten-2 white-text"
 						value="Ajouter" />
 				</div>
 			</form>
 		</div>
 	</div>
+	
+	<div class="fixed-action-btn">
+	    <a class="btn-floating btn-large pink" id="addTetrimino">
+	      <i class="large material-icons">add</i>
+	    </a>
+    </div>
+	
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script
@@ -94,6 +102,9 @@
 		$(document).ready(function() {
 			$('ul.tabs').tabs();
 			$('select').material_select();
+			$("#addTetrimino").click(function() {
+			    $('ul.tabs').tabs('select_tab', 'test2');
+			  });
 		});
 	</script>
 </body>
