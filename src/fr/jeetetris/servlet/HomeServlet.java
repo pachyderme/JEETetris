@@ -40,12 +40,13 @@ public class HomeServlet extends HttpServlet {
 //      On récupère la session dans la requète
 		HttpSession session = request.getSession();
 //		Si l'utilisateur n'est pas connecté alors on le redirige vers la page d'accueil : HOME
-        if ( session.getAttribute( USER ) == null ) {
-        	response.sendRedirect(LOGIN);
-        } else {
-//        	Sinon, on le redirige vers la destination
-            this.getServletContext().getRequestDispatcher( "/WEB-INF/"+HOME+".jsp" ).forward( request, response );
-        }
+//        if ( session.getAttribute( USER ) == null ) {
+//        	response.sendRedirect(LOGIN);
+//        } else {
+////        	Sinon, on le redirige vers la destination
+//            this.getServletContext().getRequestDispatcher( "/WEB-INF/"+HOME+".jsp" ).forward( request, response );
+//        }
+		this.getServletContext().getRequestDispatcher( "/WEB-INF/"+HOME+".jsp" ).forward( request, response );
         
 	}
 
@@ -78,7 +79,7 @@ public class HomeServlet extends HttpServlet {
 				}
 			}
 		}
-		doGet(request, response);
+		response.sendRedirect("home");
 	}
 
 }

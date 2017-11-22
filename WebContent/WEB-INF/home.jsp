@@ -14,7 +14,7 @@
 <body>
 	<nav class="nav-extended">
 		<div class="nav-wrapper center">
-			<a href="#" class="brand-logo">Tetris</a> <a href="#"
+			<a href="#" class="brand-logo" style="letter-spacing:7px;">TETRIS</a> <a href="#"
 				data-activates="mobile-demo" class="button-collapse"><i
 				class="material-icons">menu</i></a>
 			<ul id="nav-mobile" class="right hide-on-med-and-down">
@@ -43,8 +43,9 @@
 	</nav>
 	<div id="test1" class="col s12">
 		<div class="container row">
+		<div class="row"></div>
 			<c:if test="${applicationScope['tetris'].tetriminos.size() == 0 }">
-			<p class="light">Aucune entrée</p>
+			<p class="light center">Aucune entrée</p>
 			</c:if>
 			<c:forEach items="${applicationScope['tetris'].tetriminos }" var="tetrimino">
 				<div class="col s6 m4">
@@ -63,7 +64,8 @@
 			</c:forEach>
 		</div>
 	</div>
-	<div id="test2" class="col s12">
+	<div id="test2" class="container col s12">
+			<div class="row"></div>
 		<div class="row">
 			<form method="POST" action="" class="col s12">
 				<div class="row">
