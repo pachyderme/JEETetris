@@ -46,7 +46,7 @@ public class LoginServlet extends HttpServlet {
 		if(request.getServletContext().getAttribute("users") != null) {
 			List<User> users = (List<User>) request.getServletContext().getAttribute("users");
 			for(User u : users) {
-				if(u.getIdentifier().equals(request.getParameter("identifier"))) {
+				if(u.getIdentifier().equals(request.getParameter("identifier")) && u.getPassword().equals(request.getParameter("password"))) {
 					request.getSession().setAttribute("user", u);
 				}
 			}

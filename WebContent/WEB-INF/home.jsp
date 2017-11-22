@@ -17,14 +17,17 @@
 				<li><a href="collapsible.html">Deconnexion</a></li>
 			</ul>
 			<ul class="side-nav" id="mobile-demo">
-				<li><a href="collapsible.html">Deconnexion</a></li>
+				<li>
+					<form method="POST" action="">
+						<input type="submit" name="deconnexion" value="Deconnexion" />
+					</form>
+				</li>
 			</ul>
 		</div>
 		<div class="nav-content">
 			<ul class="tabs tabs-transparent">
 				<li class="tab"><a class="active" href="#test1">Tétriminos</a></li>
-				<li class="tab"><a href="#test2">Ajouter un
-						tétrimino</a></li>
+				<li class="tab"><a href="#test2">Ajouter un tétrimino</a></li>
 			</ul>
 		</div>
 	</nav>
