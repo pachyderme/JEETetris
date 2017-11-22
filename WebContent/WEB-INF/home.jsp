@@ -8,7 +8,7 @@
     <body>
         <p>Connecté.</p>
         <form method="POST" action="">
-			<input type="submit" value="Deconnexion"/>
+			<input type="submit" name="deconnexion" value="Deconnexion"/>
 		</form>
     </body>
 </html>

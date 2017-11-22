@@ -47,6 +47,9 @@ public class HomeServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		if(request.getParameter("deconnexion") != null) {
+			request.getSession().setAttribute(USER, null);
+		}
 		doGet(request, response);
 	}
 
