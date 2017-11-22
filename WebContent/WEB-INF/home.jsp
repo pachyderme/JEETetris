@@ -60,10 +60,10 @@
 				<div class="row">
 					<div class="input-field col s6">
 						<input id="name" type="text"
-							class="validate"> <label for="name">Nom</label>
+							class="validate" name="name"> <label for="name">Nom</label>
 					</div>
 					<div class="input-field col s6">
-						<select>
+						<select id="color" name="color">
 							<option value="" disabled selected>Selectionner une couleur</option>
 							<option value="1">Bleu</option>
 							<option value="2">Blanc</option>
