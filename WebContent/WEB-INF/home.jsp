@@ -56,7 +56,9 @@
 						</div>
 						<div class="card-action">
 							<form method="post" action="">
-								<button type="submit" class="red white-text btn red darken-2" name="delete" value="${tetrimino.name }">Supprimer</button>
+								<button type="submit" class="btn waves-effect waves-light pink" name="delete" value="${tetrimino.name }" type="submit" name="deconnexion">
+								    <i class="material-icons">delete</i>
+								</button>
 							</form>
 						</div>
 					</div>
@@ -109,6 +111,7 @@
 		$(document).ready(function() {
 			$('ul.tabs').tabs();
 			$('select').material_select();
+			$(".button-collapse").sideNav();
 			$("#addTetrimino").click(function() {
 			    $('ul.tabs').tabs('select_tab', 'test2');
 			  });
