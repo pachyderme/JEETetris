@@ -1,12 +1,19 @@
 package fr.jeetetris.servlet;
 
 import java.io.IOException;
+import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
+import fr.jeetetris.models.Tetrimino;
+import fr.jeetetris.models.Tetrimino.TetriminoForm;
+import fr.jeetetris.models.Tetris;
+import fr.jeetetris.models.User;
 
 /**
  * Servlet implementation class HomeServlet
@@ -49,6 +56,12 @@ public class HomeServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		if(request.getParameter("deconnexion") != null) {
 			request.getSession().setAttribute(USER, null);
+		}
+		if(request.getServletContext().getAttribute("tetris") != null) {
+			Tetris tetris = (Tetris) request.getServletContext().getAttribute("tetris");
+			if(request.getAttribute("name") != null && request.getAttribute("color") != null) {
+				tetris.getTetriminos().add(new Tetrimino(TetriminoForm.SQUARE, request.getAttribute("color").toString(), request.getAttribute("name").toString()));
+			}
 		}
 		doGet(request, response);
 	}
