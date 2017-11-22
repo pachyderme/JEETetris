@@ -1,4 +1,5 @@
-<%@ page pageEncoding="UTF-8"%>
+<%@ page pageEncoding="UTF-8" langage="java"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,7 +17,7 @@
 			<ul id="nav-mobile" class="right hide-on-med-and-down">
 				<li>
 					<form method="POST" action="">
-						<input class="btn waves-effect waves-light red" type="submit" name="deconnexion" value="Deconnexion" />
+						<input class="btn waves-effect waves-light pink" type="submit" name="deconnexion" value="Deconnexion" />
 
 					</form>
 				</li>
@@ -38,19 +39,19 @@
 	</nav>
 	<div id="test1" class="col s12">
 		<div class="row">
-			<div class="col s12 m6">
-				<div class="card blue-grey darken-1">
+			<c:foreach items="${applicationScope['tetris'].Tetriminos }" var="tetrimino">
+						<div class="col s12 m6">
+				<div class="card ${tetrimino.Color }">
 					<div class="card-content white-text">
-						<span class="card-title">Card Title</span>
-						<p>I am a very simple card. I am good at containing small bits
-							of information. I am convenient because I require little markup
-							to use effectively.</p>
+						<span class="card-title">${tetrimino.Name }</span>
+						
 					</div>
 					<div class="card-action">
 						<a href="#">This is a link</a> <a href="#">This is a link</a>
 					</div>
 				</div>
 			</div>
+			</c:foreach>
 		</div>
 	</div>
 	<div id="test2" class="col s12">

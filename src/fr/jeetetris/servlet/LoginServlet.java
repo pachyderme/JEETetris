@@ -18,6 +18,7 @@ import fr.jeetetris.models.User;
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
+	private String msg = "";
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -43,11 +44,16 @@ public class LoginServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		// doGet(request, response);
+		
 		if(request.getServletContext().getAttribute("users") != null) {
 			List<User> users = (List<User>) request.getServletContext().getAttribute("users");
 			for(User u : users) {
 				if(u.getIdentifier().equals(request.getParameter("identifier")) && u.getPassword().equals(request.getParameter("password"))) {
 					request.getSession().setAttribute("user", u);
+				}else
+				{
+					msg = "Echec de la connexion";
+					request.setAttribute("msg", msg);
 				}
 			}
 		}
