@@ -7,5 +7,8 @@
     </head>
     <body>
         <p>Connecté.</p>
+        <form method="POST" action="">
+			<input type="submit" value="Deconnexion"/>
+		</form>
     </body>
 </html>
