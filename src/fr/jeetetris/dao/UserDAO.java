@@ -8,10 +8,7 @@ import javax.persistence.PersistenceContext;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import fr.jeetetris.models.Tetrimino;
-import fr.jeetetris.models.Tetris;
 import fr.jeetetris.models.User;
-import fr.jpatest.model.Product;
 
 @Repository
 @Transactional

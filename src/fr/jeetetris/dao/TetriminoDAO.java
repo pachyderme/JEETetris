@@ -9,7 +9,6 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import fr.jeetetris.models.Tetrimino;
-import fr.jpatest.model.Product;
 
 @Repository
 @Transactional
