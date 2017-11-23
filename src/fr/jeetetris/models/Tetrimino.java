@@ -1,13 +1,17 @@
 package fr.jeetetris.models;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Tetrimino {
-	public enum TetriminoForm {
-		  L,
-		  I,
-		  SQUARE;
-		}
 	
-	private TetriminoForm form;
+	@Id 
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int id;
+	
 	private String color ;
 	private String name;
 	
@@ -17,12 +21,6 @@ public class Tetrimino {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public TetriminoForm getForm() {
-		return form;
-	}
-	public void setForm(TetriminoForm form) {
-		this.form = form;
-	}
 	public String getColor() {
 		return color;
 	}
@@ -30,9 +28,8 @@ public class Tetrimino {
 		this.color = color;
 	}
 	
-	public Tetrimino(TetriminoForm form, String color, String name) {
+	public Tetrimino(String color, String name) {
 		super();
-		this.form = form;
 		this.color = color;
 		this.name = name;
 	}
