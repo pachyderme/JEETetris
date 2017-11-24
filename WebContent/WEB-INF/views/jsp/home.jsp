@@ -32,7 +32,7 @@
 <div id="test1" class="col s12">
 	<div class="container row">
 		<div class="row"></div>
-		<c:if test="${applicationScope['tetris'].tetriminos.size() == 0 }">
+		<c:if test="${applicationScope['tetriminos'].size() == 0 }">
 			<p class="light center">Aucune entrée</p>
 		</c:if>
 		<c:forEach items="${applicationScope['tetriminos']}" var="tetrimino">
@@ -40,12 +40,11 @@
 				<div class="card ${tetrimino.color } lighten-1">
 					<div class="card-content white-text">
 						<span class="card-title">${tetrimino.name }</span>
-
 					</div>
 					<div class="card-action">
 						<form:form method="POST" action="/JEETetris/deleteTetrimino"
 							modelAttribute="tetrimino">
-							<button type="submit" class="btn waves-effect waves-light pink"
+							<button type="submit" class="btn waves-effect waves-light ${tetrimino.color } lighten-3"
 								name="id" value="${tetrimino.id }" type="submit"
 								name="deconnexion">
 								<i class="material-icons">delete</i>
