@@ -20,6 +20,9 @@ public class User {
 	public String getIdentifier() {
 		return identifier;
 	}
+	public User() {
+		
+	}
 	public void setIdentifier(String identifier) {
 		this.identifier = identifier;
 	}

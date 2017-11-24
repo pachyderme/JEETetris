@@ -2,6 +2,8 @@ package fr.jeetetris.dao;
 
 import java.util.List;
 
+import fr.jeetetris.models.User;
+
 public interface IDAO<T> {
 	public T find(int id);
 	public List<T> findAll();
