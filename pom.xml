@@ -33,6 +33,13 @@
 			<version>4.3.3.RELEASE</version>
 		</dependency>
 
+		<!-- JSP Tiles -->
+		<dependency>
+			<groupId>org.apache.tiles</groupId>
+			<artifactId>tiles-jsp</artifactId>
+			<version>3.0.7</version>
+		</dependency>
+
 		<!-- Connecteur MySQL -->
 		<dependency>
 			<groupId>mysql</groupId>
