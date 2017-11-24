@@ -16,11 +16,11 @@
 		<form:form method="POST" action="/JEETetris/connect" class="row"
 			modelAttribute="user">
 			<div class="input-field">
-				<input type="text" name="identifier" id="identifier" /> <label
+				<input type="text" name="identifier" id="identifier" value="${ user.identifier }" /> <label
 					for="identifier">Identifiant</label>
 			</div>
 			<div class="input-field">
-				<input type="text" name="password" id="password" /> <label
+				<input type="text" name="password" id="password" value="${ user.password }" /> <label
 					for="password">Password</label>
 			</div>
 			<div class="input-field">

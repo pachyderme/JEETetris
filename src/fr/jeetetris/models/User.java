@@ -17,8 +17,17 @@ public class User {
 	private String firstName;
 	private String lastName;
 	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
 	public String getIdentifier() {
 		return identifier;
+	}
+	public User() {
+		
 	}
 	public void setIdentifier(String identifier) {
 		this.identifier = identifier;
