@@ -15,7 +15,7 @@ import javax.servlet.http.HttpSession;
 /**
  * Servlet Filter implementation class UserFilter
  */
-@WebFilter("/*")
+//@WebFilter("/*")
 public class UserFilter implements Filter {
 
     /**
@@ -40,7 +40,9 @@ public class UserFilter implements Filter {
 		HttpServletResponse response = (HttpServletResponse)rep;
 		HttpSession session = request.getSession(false);
 		
-		if(session != null && session.getAttribute("user") == null && !request.getServletPath().equals("/login")) {
+		if(session != null && session.getAttribute("user") == null
+				&& !request.getServletPath().equals("/login")
+				&& !request.getServletPath().equals("/connect")) {
 			response.sendRedirect("login");
 			return;
 		}

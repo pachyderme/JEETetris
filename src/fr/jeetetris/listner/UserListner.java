@@ -7,7 +7,11 @@ import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
 
-import fr.jeetetris.models.Tetris;
+import org.springframework.context.ApplicationContext;
+import org.springframework.web.context.support.WebApplicationContextUtils;
+
+import fr.jeetetris.dao.IDAO;
+import fr.jeetetris.models.Tetrimino;
 import fr.jeetetris.models.User;
 
 /**
@@ -17,7 +21,7 @@ import fr.jeetetris.models.User;
 @WebListener
 public class UserListner implements ServletContextListener {
 	public List<User> users;
-	public Tetris tetris;
+	
     /**
      * Default constructor. 
      */
@@ -41,10 +45,11 @@ public class UserListner implements ServletContextListener {
          users.add(new User("pbouv", "mdp", "Pierre", "Pierre"));
          
          sce.getServletContext().setAttribute("users", users);
-         
-         tetris = new Tetris();
-         
-         sce.getServletContext().setAttribute("tetris", tetris);
+                  
+         ApplicationContext myContext = WebApplicationContextUtils.getRequiredWebApplicationContext(sce.getServletContext());
+         @SuppressWarnings("unchecked")
+		IDAO<Tetrimino> tetriminoDAO = (IDAO<Tetrimino>)myContext.getBean("tetriminoDAO");
+         sce.getServletContext().setAttribute("tetriminos", tetriminoDAO.findAll());
     }
 	
 }

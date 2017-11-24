@@ -4,7 +4,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 
 @Entity
 public class Tetrimino {
@@ -13,11 +12,15 @@ public class Tetrimino {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+
 	private String color;
 	private String name;
-	
-	@ManyToOne
-	private Tetris tetris;
 	
 	public String getName() {
 		return name;

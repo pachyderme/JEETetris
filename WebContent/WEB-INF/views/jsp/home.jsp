@@ -47,7 +47,7 @@
 			<c:if test="${applicationScope['tetris'].tetriminos.size() == 0 }">
 			<p class="light center">Aucune entrée</p>
 			</c:if>
-			<c:forEach items="${applicationScope['tetris'].tetriminos }" var="tetrimino">
+			<c:forEach items="${applicationScope['tetriminos']}" var="tetrimino">
 				<div class="col s6 m4">
 					<div class="card ${tetrimino.color } lighten-1">
 						<div class="card-content white-text">
@@ -56,7 +56,7 @@
 						</div>
 						<div class="card-action">
 							<form method="post" action="">
-								<button type="submit" class="btn waves-effect waves-light pink" name="delete" value="${tetrimino.name }" type="submit" name="deconnexion">
+								<button type="submit" class="btn waves-effect waves-light pink" name="tetriminoId" value="${tetrimino.id }" type="submit" name="deconnexion">
 								    <i class="material-icons">delete</i>
 								</button>
 							</form>

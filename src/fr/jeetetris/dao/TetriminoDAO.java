@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -37,9 +38,11 @@ public class TetriminoDAO implements IDAO<Tetrimino> {
 		}
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<Tetrimino> findAll() {
-		return null;
+		Query myQuery = em.createQuery("from Tetrimino");
+		return (List<Tetrimino>)myQuery.getResultList();
 	}
 
 }

@@ -14,7 +14,7 @@ import fr.jeetetris.models.User;
 /**
  * Servlet implementation class LoginServlet
  */
-@WebServlet("/login")
+@WebServlet("/testl")
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -46,6 +46,7 @@ public class LoginServlet extends HttpServlet {
 		// doGet(request, response);
 		
 		if(request.getServletContext().getAttribute("users") != null) {
+			@SuppressWarnings("unchecked")
 			List<User> users = (List<User>) request.getServletContext().getAttribute("users");
 			for(User u : users) {
 				if(u.getIdentifier().equals(request.getParameter("identifier")) && u.getPassword().equals(request.getParameter("password"))) {

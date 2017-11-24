@@ -1,13 +1,9 @@
 package fr.jeetetris.models;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 
 @Entity
 public class Tetris {
@@ -15,17 +11,16 @@ public class Tetris {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
-	@OneToMany(mappedBy="tetris")
-	private List<Tetrimino> tetriminos;
+	private String userPseudo;
 	
 	private int score;
 	
-	public List<Tetrimino> getTetriminos() {
-		return tetriminos;
+	public String getUserPseudo() {
+		return userPseudo;
 	}
-	
-	public void setTetriminos(List<Tetrimino> tetriminos) {
-		this.tetriminos = tetriminos;
+
+	public void setUserPseudo(String userPseudo) {
+		this.userPseudo = userPseudo;
 	}
 	
 	public int getScore() {
@@ -36,13 +31,11 @@ public class Tetris {
 		this.score = score;
 	}
 	
-	public Tetris(List<Tetrimino> tetriminos, int score) {
+	public Tetris(int score, String userPseudo) {
 		super();
-		this.tetriminos = tetriminos;
 		this.score = score;
+		this.userPseudo = userPseudo;
 	}
-	public Tetris() {
-		tetriminos = new ArrayList<Tetrimino>();
-		this.score = 0;
+	public Tetris() {		
 	}
 }
