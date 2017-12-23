@@ -1,8 +1,17 @@
 package fr.jeetetris.dao;
 
-import fr.jeetetris.models.User;
+import java.util.List;
 
-public interface IUserDAO extends IDAO<User> {
+import fr.jeetetris.models.Admin;
 
-	public User findByIdentifier(String identifier, String password);
+public interface IUserDAO extends IDAO<Admin> {
+	public Admin getByIdentifier(String identifier, String password);
+	
+	public Admin save(final Admin o);
+
+    public void delete(final Admin object);
+
+	public Admin get(final Class<Admin> type, final int id);
+
+	public List<Admin> getAll(final Class<Admin> type);
 }

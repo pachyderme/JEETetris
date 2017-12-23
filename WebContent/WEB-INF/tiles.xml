@@ -3,23 +3,97 @@
 	"-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
 	"http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
 <tiles-definitions>
-	<!-- Configuration du layout principal -->
-	<definition name="base.definition" template="/WEB-INF/views/jsp/layout.jsp">
+	<!-- Configuration du layout login -->
+	<definition name="base.login" template="/WEB-INF/views/jsp/base.login.jsp">
+		<put-attribute name="content" value="" />
 		<put-attribute name="title" value="" />
-		<put-attribute name="body" value="" />
 	</definition>
 
-
-	<!-- Configuration de la vue "home" -->
-	<definition name="home" extends="base.definition">
-		<put-attribute name="title" value="Accueil" />
-		<put-attribute name="body" value="/WEB-INF/views/jsp/home.jsp" />
-	</definition>
-
-
-	<!-- Configuration de la vue "subscribe" -->
-	<definition name="login" extends="base.definition">
+	<!-- Configuration de la vue "login" -->
+	<definition name="login" extends="base.login">
 		<put-attribute name="title" value="Connexion" />
-		<put-attribute name="body" value="/WEB-INF/views/jsp/login.jsp" />
+		<put-attribute name="content" value="/WEB-INF/views/jsp/login.jsp" />
+	</definition>
+
+	<!-- Configuration du layout principal -->
+	<definition name="base.layout" template="/WEB-INF/views/jsp/base.layout.jsp">
+		<put-attribute name="body" value="" />
+		<put-attribute name="navcontent" value="" />
+		<put-attribute name="title" value="" />
+	</definition>
+
+	<!-- Configuration de la vue "tests" -->
+	<definition name="tests" extends="base.layout">
+		<put-attribute name="title" value="Tests" />
+		<put-attribute name="body" value="/WEB-INF/views/jsp/tests.jsp" />
+		<put-attribute name="navcontent" value="/WEB-INF/views/jsp/tests.nav.jsp" />
+		<put-attribute name="values" value="/WEB-INF/views/jsp/values.jsp" cascade="true"/>
+		<put-attribute name="cardContent" value="/WEB-INF/views/jsp/tests.card.jsp" cascade="true"/>
+	</definition>
+	
+	<!-- Configuration de la vue "students" -->
+	<definition name="students" extends="base.layout">
+		<put-attribute name="title" value="Candidats" />
+		<put-attribute name="body" value="/WEB-INF/views/jsp/students.jsp" />
+		<put-attribute name="navcontent" value="/WEB-INF/views/jsp/students.nav.jsp" />
+		<put-attribute name="values" value="/WEB-INF/views/jsp/values.jsp" cascade="true"/>
+		<put-attribute name="cardContent" value="/WEB-INF/views/jsp/students.card.jsp" cascade="true"/>
+	</definition>
+
+	<!-- Configuration de la vue "quizzes" -->
+	<definition name="quizzes" extends="base.layout">
+		<put-attribute name="title" value="Questionnaires" />
+		<put-attribute name="body" value="/WEB-INF/views/jsp/quizzes.jsp" />
+		<put-attribute name="navcontent" value="/WEB-INF/views/jsp/quizzes.nav.jsp" />
+		<put-attribute name="values" value="/WEB-INF/views/jsp/values.jsp" cascade="true"/>
+		<put-attribute name="cardContent" value="/WEB-INF/views/jsp/quizzes.card.jsp" cascade="true"/>
+	</definition>
+
+	<!-- Configuration de la vue "formations" -->
+	<definition name="formations" extends="base.layout">
+		<put-attribute name="title" value="Formations" />
+		<put-attribute name="body" value="/WEB-INF/views/jsp/formations.jsp" />
+		<put-attribute name="navcontent" value="/WEB-INF/views/jsp/formations.nav.jsp" />
+		<put-attribute name="values" value="/WEB-INF/views/jsp/values.jsp" cascade="true"/>
+		<put-attribute name="cardContent" value="/WEB-INF/views/jsp/formations.card.jsp" cascade="true"/>
+	</definition>
+
+	<!-- Configuration de la vue "subjects" -->
+	<definition name="subjects" extends="base.layout">
+		<put-attribute name="title" value="Matières" />
+		<put-attribute name="body" value="/WEB-INF/views/jsp/subjects.jsp" />
+		<put-attribute name="navcontent" value="/WEB-INF/views/jsp/subjects.nav.jsp" />
+		<put-attribute name="values" value="/WEB-INF/views/jsp/values.jsp" cascade="true"/>
+		<put-attribute name="cardContent" value="/WEB-INF/views/jsp/subjects.card.jsp" cascade="true"/>
+	</definition>
+	
+	<!-- Configuration de la vue "questions" -->
+	<definition name="questions" extends="base.layout">
+		<put-attribute name="title" value="Questions" />
+		<put-attribute name="body" value="/WEB-INF/views/jsp/questions.jsp" />
+		<put-attribute name="navcontent" value="/WEB-INF/views/jsp/questions.nav.jsp" />
+		<put-attribute name="values" value="/WEB-INF/views/jsp/values.jsp" cascade="true"/>
+		<put-attribute name="cardContent" value="/WEB-INF/views/jsp/questions.card.jsp" cascade="true"/>
+	</definition>
+	
+	<!-- Configuration de la vue "questions.saved" -->
+	<definition name="questions.saved" extends="base.layout">
+		<put-attribute name="title" value="Question" />
+		<put-attribute name="body" value="/WEB-INF/views/jsp/questions.saved.jsp" />
+		<put-attribute name="navcontent" value="" />
+	</definition>
+	
+	<!-- Configuration de la vue "responses" -->
+	<definition name="responses" extends="base.layout">
+		<put-attribute name="title" value="Suggestions" />
+		<put-attribute name="body" value="/WEB-INF/views/jsp/responses.jsp" />
+		<put-attribute name="navcontent" value="/WEB-INF/views/jsp/responses.nav.jsp" />
+	</definition>
+	
+	<!-- Configuration de la vue "responses" -->
+	<definition name="responses.saved" extends="base.layout">
+		<put-attribute name="title" value="Suggestion" />
+		<put-attribute name="body" value="/WEB-INF/views/jsp/responses.saved.jsp" />
+		<put-attribute name="navcontent" value="" />
 	</definition>
 </tiles-definitions>

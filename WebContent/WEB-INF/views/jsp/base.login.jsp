@@ -1,5 +1,8 @@
 <%@ page pageEncoding="UTF-8"%>
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<c:set var="contextPath" value="${pageContext.request.contextPath}" scope="request"/>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,20 +14,10 @@
 	rel="stylesheet">
 </head>
 <body>
-	<tiles:insertAttribute name="body" />
+	<tiles:insertAttribute name="content"/>
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script
 		src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-	<script>
-		$(document).ready(function() {
-			$('ul.tabs').tabs();
-			$('select').material_select();
-			$(".button-collapse").sideNav();
-			$("#addTetrimino").click(function() {
-				$('ul.tabs').tabs('select_tab', 'test2');
-			});
-		});
-	</script>
 </body>
 </html>

@@ -12,9 +12,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import fr.jeetetris.dao.IUserDAO;
-import fr.jeetetris.models.User;
+import fr.jeetetris.dao.UserDAO;
+import fr.jeetetris.models.Admin;
 
-@Controller 
+@Controller
+@RequestMapping("/connect") 
 public class LoginController { 
 
 	@Autowired
@@ -26,14 +28,14 @@ public class LoginController {
 	}
 
 	@RequestMapping(value = "/connect" , method = RequestMethod.POST) 
-	public String connect(@ModelAttribute("user") User user, BindingResult bResult, Model model, HttpSession session, HttpServletRequest request) { 
+	public String connect(@ModelAttribute("user") Admin admin, BindingResult bResult, Model model, HttpSession session, HttpServletRequest request) { 
 
 		String result = "redirect:/login";
 
-		user = userDAO.findByIdentifier(user.getIdentifier(), user.getPassword());
-		if(user != null) {
-			session.setAttribute("user", user);
-			result = "redirect:/home";
+		admin = ((UserDAO)userDAO).getByIdentifier(admin.getIdentifier(), admin.getPassword());
+		if(admin != null) {
+			session.setAttribute("user", admin);
+			result = "redirect:/home/tests";
 		}else
 		{
 			model.addAttribute("msg", "Echec de la connexion");

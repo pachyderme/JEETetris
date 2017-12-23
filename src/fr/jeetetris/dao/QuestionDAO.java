@@ -12,20 +12,20 @@ import javax.persistence.criteria.Root;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import fr.jeetetris.models.Admin;
-import fr.jeetetris.models.User;
+import fr.jeetetris.models.Question;
 
 @Repository
 @Transactional
-public class UserDAO implements IUserDAO{
+public class QuestionDAO implements IQuestionDAO{
 
 	@PersistenceContext
 	protected EntityManager em;
 	
-	public Admin getByIdentifier(String identifier, String password) {
+	public List<Question> getByQuizId(int id) {
 		try {
-			Admin u = (Admin) em.createQuery("FROM User WHERE identifier = :identifier AND password = :password").setParameter("identifier",identifier).setParameter("password",password).getSingleResult();
-			return u;
+			@SuppressWarnings("unchecked")
+			List<Question> q = (List<Question>) em.createQuery("FROM Question WHERE quiz_id = :id").setParameter("id",id).getResultList();
+			return q;
 		}catch(PersistenceException e) {
 			System.out.println(e.getMessage());
 			return null;
@@ -33,25 +33,25 @@ public class UserDAO implements IUserDAO{
 	}
 
 	@Override
-	public Admin save(final Admin o){
-      return (Admin) em.merge(o);
+	public Question save(final Question o){
+      return (Question) em.merge(o);
     }
 	
 	@Override
-    public void delete(final Admin object){
+    public void delete(final Question object){
       em.remove(em.merge(object));
     }
 
 	@Override
-	public Admin get(final Class<Admin> type, final int id){
-      return (Admin) em.find(type, id);
+	public Question get(final Class<Question> type, final int id){
+      return (Question) em.find(type, id);
     }
 
 	@Override
-	public List<Admin> getAll(final Class<Admin> type) {
+	public List<Question> getAll(final Class<Question> type) {
 		CriteriaBuilder builder = em.getCriteriaBuilder();
-        CriteriaQuery<Admin> cq = builder.createQuery(type);
-        Root<Admin> root = cq.from(type);
+        CriteriaQuery<Question> cq = builder.createQuery(type);
+        Root<Question> root = cq.from(type);
         cq.select(root);
         return em.createQuery(cq).getResultList();
     }

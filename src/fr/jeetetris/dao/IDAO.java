@@ -2,11 +2,12 @@ package fr.jeetetris.dao;
 
 import java.util.List;
 
-import fr.jeetetris.models.User;
-
 public interface IDAO<T> {
-	public T find(int id);
-	public List<T> findAll();
-	public T save(T object);
-	public boolean delete(T object);
+	public T save(final T o);
+
+    public void delete(final T object);
+
+	public T get(final Class<T> type, final int id);
+
+	public List<T> getAll(final Class<T> type);
 }
